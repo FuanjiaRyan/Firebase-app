@@ -3,21 +3,22 @@ import 'package:firebase_1/component/my_texfield.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class LoginPage extends StatelessWidget {
-
+class RegisterPage extends StatelessWidget {
   final void Function()? onTap;
 
-  LoginPage({
+  RegisterPage({
     super.key,
     required this.onTap,
   });
   //text controllers
+  final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPwController = TextEditingController();
 
 
-  //login method
-  void login() {}
+  //register method
+  void register() {}
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +30,15 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            //logo
+              //logo
               FaIcon(
                 FontAwesomeIcons.user,
                 size: 80,
                 color: Theme.of(context).colorScheme.inversePrimary,
               ),
-            const SizedBox(height: 25),
+              const SizedBox(height: 25),
 
-            //app name
+              //app name
               Text(
                 "Firebase Auth",
                 style: TextStyle(
@@ -45,11 +46,18 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 25),
-            //email textfield
+              //username textfield
               MyTextField(
-                  hintText: "Email",
-                  obscureText: false,
-                  controller: emailController,
+                hintText: "Username",
+                obscureText: false,
+                controller: usernameController,
+              ),
+              const SizedBox(height: 10),
+              //email textfield
+              MyTextField(
+                hintText: "Email",
+                obscureText: false,
+                controller: emailController,
               ),
               const SizedBox(height: 10),
               //password textfield
@@ -59,12 +67,19 @@ class LoginPage extends StatelessWidget {
                 controller: passwordController,
               ),
               const SizedBox(height: 10),
+              //confirm password
+              MyTextField(
+                hintText: "Confirm Password",
+                obscureText: true,
+                controller: confirmPwController,
+              ),
+              const SizedBox(height: 10),
               //forgot password
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                      "Forgot Password",
+                    "Forgot Password",
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.secondary,
                     ),
@@ -72,20 +87,20 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-            //sign in button
+              //register button
               MyButton(
-                  text: "Login",
-                  onTap: login,
+                text: "Register",
+                onTap: register,
               ),
-            //don't have an account? register here
+              //don't have an account? register here
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have an account?"),
+                  Text("Already have an account?"),
                   GestureDetector(
                     onTap: onTap,
                     child: const Text(
-                        "Register here",
+                      "Login here",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),

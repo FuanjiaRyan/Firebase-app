@@ -6,10 +6,10 @@ ThemeData darkMode = ThemeData(
       surface: Colors.grey.shade900,
       primary: Colors.grey.shade800,
       secondary: Colors.grey.shade700,
-      inversePrimary: Colors.grey.shade800,
+      inversePrimary: Colors.grey.shade300,
   ),
-  textTheme: ThemeData.light().textTheme.apply(
-    bodyColor: Colors.grey.shade800,
-    displayColor: Colors.black,
+  textTheme: ThemeData.dark().textTheme.apply(
+    bodyColor: Colors.grey.shade300,
+    displayColor: Colors.white,
   ),
 );

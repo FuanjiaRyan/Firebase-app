@@ -1,11 +1,16 @@
+import 'package:firebase_1/auth/login_or_register.dart';
 import 'package:firebase_1/firebase_options.dart';
-import 'package:firebase_1/pages/login_page.dart';
 import 'package:firebase_1/theme/dark_mode.dart';
 import 'package:firebase_1/theme/light_mode.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(
     MyApp(),
   );
@@ -18,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: const LoginOrRegister(),
       theme: lightMode,
       darkTheme: darkMode,
     );
