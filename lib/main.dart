@@ -1,18 +1,16 @@
+import 'package:firebase_1/Bottom%20Nav%20Bar/bottom_nav_bar_screen.dart';
 import 'package:firebase_1/firebase_options.dart';
+import 'package:firebase_1/welcome_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'login&signup page/signup_page.dart';
-
-void main() async{
-
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform);
 
-  runApp(
-    MyApp(),
-  );
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,10 +18,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    final User? user = _auth.currentUser;
     return MaterialApp(
+      theme: ThemeData(textTheme: GoogleFonts.latoTextTheme()),
       debugShowCheckedModeBanner: false,
-      home: SignupPage(),
+
+      //Code to prevent the user from opening the home page after closing the app
+      home: user != null ? BottomNavBarScreen() : WelcomeScreen(),
     );
   }
 }
-
