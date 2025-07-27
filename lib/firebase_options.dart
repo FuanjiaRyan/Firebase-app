@@ -51,18 +51,18 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBwcW2XppIULuNCTHY1avmoHIicK0N2J8E',
-    appId: '1:207351772720:android:fb1b62ecae381c93f69ff5',
-    messagingSenderId: '207351772720',
-    projectId: 'schoolapp-1fb1a',
-    storageBucket: 'schoolapp-1fb1a.firebasestorage.app',
+    appId: '1:965485780400:android:bf78079ebf9630b94d8a75',
+    messagingSenderId: '965485780400',
+    projectId: 'fir-app-7818b',
+    storageBucket: 'fir-app-7818b.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBDPe3KceNNmLiIFVoIAVGI6LzuA8omdbY',
-    appId: '1:207351772720:ios:a8a91995d39a5d27f69ff5',
-    messagingSenderId: '207351772720',
-    projectId: 'schoolapp-1fb1a',
-    storageBucket: 'schoolapp-1fb1a.firebasestorage.app',
-    iosBundleId: 'com.example.chitechmaApp',
+    appId: '1:965485780400:ios:ccd589e35baeb3e74d8a75',
+    messagingSenderId: '965485780400',
+    projectId: 'fir-app-7818b',
+    storageBucket: 'fir-app-7818b.firebasestorage.app',
+    iosBundleId: 'com.example.firebase_1',
   );
 }
